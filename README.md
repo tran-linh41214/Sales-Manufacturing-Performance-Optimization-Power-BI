@@ -1,17 +1,6 @@
-# Adventure_Works_Sales
-# UNIGAP - PORTFOLIO BUILDING MODULE -  PBI TEMPLATE
-
-🔥Use this template as an outline for your Github projects. Make a copy of this readme file and tailor it your own. Happy portfolio-ing and start applying aggressively :"))
-
----
-![E-commerce Website_Analysis](https://github.com/Dorothy-Ho-Vy/Sample-Readme-template/blob/0e47d32968459ec80d7d2666fbf5044ac56894e6/1.png)
-
-Change Icon emoji 🔥🔍📘🚩 to your likings by clicking "Start" + "."
-
-# 📊 Project Title: [Your Project Name]  
-Author: [Your Name]  
-Date: YYYY-MM-DD  
-Tools Used: SQL/ Power BI/ Python  
+# 📊 Project Title: [Adventure Works Sales]  
+Author: [Linh Tran]  
+Tools Used: Power BI 
 
 ---
 
@@ -27,40 +16,35 @@ Tools Used: SQL/ Power BI/ Python
 ## 📌 Background & Overview  
 
 ### Objective:
-### 📖 What is this project about? 
- 
-- Provide a brief introduction to the project. Define the problem statement and why it is important.
-- Write in bullet point format
+### 📖 Overview 
+Adventure Works, a leading player in the manufacturing and sales industry, requires in-depth analysis of its sales data to make informed business decisions. This dashboard collates extensive sales data into an easily interpretable format, helping stakeholders understand key sales dynamics and trends.  
 
- _Example:_
- 
- This project analyzes sales trends and inventory control using SQL and Power BI. The objective is
- - optimize stock levels & improve demand forecasting
- - reduce costs.  
+### 👤 Stake Holder  
+✔️ Production Director
+✔️ Project Manager 
+✔️ Planning Department  
+✔️ Warehouse and Quality Management Department
 
-### 👤 Who is this project for?  
-
-Mention who might benefit from this project 
-
- _Example:_
-
-✔️ Data analysts & business analysts  
-✔️ Supply chain managers & inventory controllers  
-✔️ Decision-makers & stakeholders  
 
 ###  ❓Business Questions:  
-Clearly outline what the business questions project will solve.  
-
- _Example:_
-
-✔️ Identify high-demand products and sales trends.  
-✔️ Optimize inventory levels to prevent overstocking or stockouts.  
-✔️ Provide actionable insights through Power BI dashboards.  
+✔️ Analyze production reports based on the fiscal year.
+✔️ Manage quantity, quality, time, workforce, and production costs for each product category. 
 
 ### 🎯Project Outcome:  
 Summarize key findings and insights/ trends/ themes in a concise, bullet-point 
 format.  
-
+Features
+Time Series Analysis: Visual representation of sales trends over the three-year period.
+Product Performance Tracking: Insights into top-performing and underperforming products.
+Customer Demographics Analysis: Breakdown of sales data by customer demographics such as age, location, and purchasing habits.
+Sales Territory Mapping: Geographic visualization of sales distribution and territory performance.
+Revenue and Profit Analysis: Detailed analysis of revenue streams and profitability.
+Interactive Filter: Customizable filters for in-depth analysis of specific time frames, products, regions, and customer segments.
+Benefits
+Strategic Decision Making: Empowers management with data-driven insights for strategic planning.
+Performance Tracking: Enables sales teams to monitor and improve their performance.
+Market Understanding: Helps in understanding market trends and customer preferences.
+Efficient Reporting: Provides an efficient way to communicate key sales metrics to stakeholders.
  _Example:_
 
 ✔️ Sales Trends: The top X% of products generate Y% of revenue.  
@@ -72,29 +56,54 @@ format.
 ## 📂 Dataset Description & Data Structure  
 
 ### 📌 Data Source  
-- Source: (Mention where the dataset is obtained from—Kaggle, company database, government sources, etc.)  
-- Size: (Mention the number of rows & columns)  
+- Source: Google BigQuery  
 - Format: (.csv, .sql, .xlsx, etc.)  
 
 ### 📊 Data Structure & Relationships  
 
 #### 1️⃣ Tables Used:  
 Mention how many tables are in the dataset.  
+7 tables:
+"Production_WorkOrder
+Production_WorkOrderRouting"
+"Production_Product
+Production_Location
+Production_ProductCategory
+Production_Subcategory
+Production_ScrapReason"
 
 #### 2️⃣ Table Schema & Data Snapshot  
 
-Table 1: Products Table  
-
-👉🏻 Insert a screenshot of table schema 
-
- _Example:_
+Table 1: Production_WorkOrder
 
 | Column Name | Data Type | Description |  
 |-------------|----------|-------------|  
-| Product_ID  | INT      | Unique identifier for each product |  
-| Name        | TEXT     | Product name |  
-| Category    | TEXT     | Product category |  
-| Price       | FLOAT    | Price per unit |  
+| WorkOrder ID  | INT      | Primary key for WorkOrder records. |  
+| ProductID       | INT     | Product identification number. Foreign key to Product.ProductID. |  
+| OrderQty    | INT     | Product quantity to build. |  
+| StockedQty | INT    | Quantity built and put in inventory. |  
+| ScrappedQty | smallint | Quantity that failed inspection. |
+| StartDate | datetime | Work order start date. |
+| EndDate | datetime | Work order end date. |
+| DueDate | datetime | Work order due date. |
+| ScrapReasonID | smallint | Reason for inspection failure. |
+| ModifiedDate | datetime | Date and time the record was last updated. |
+
+
+
+Table 2: Sales Transactions  
+
+👉🏻 Insert a screenshot of table schema 
+
+
+ _Example:_
+
+| Column Name    | Data Type | Description |  
+|---------------|----------|-------------|  
+| Transaction_ID | INT      | Unique identifier for each sale |  
+| Product_ID     | INT      | Foreign key linking to Products table |  
+| Quantity       | INT      | Number of items sold |  
+| Sale_Date      | DATE     | Date of transaction |  
 
 
 

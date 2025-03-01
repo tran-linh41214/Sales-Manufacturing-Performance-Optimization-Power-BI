@@ -197,7 +197,78 @@ Explain the step-by-step approach taken to solve the problem.
 
 1️⃣ Data Cleaning & Preprocessing  
 2️⃣ Exploratory Data Analysis (EDA)  
+
 3️⃣ SQL/ Python Analysis 
+
+Năm tài chính kết thúc ngày 30/9
+<details>
+  <summary>📌Tính năm tài chính</summary>
+ 
+DAX Tính năm tài chính
+ 
+```power BI
+
+Calendar = 
+
+--Inputs--
+VAR WeekStartsOn = "Sun"
+VAR FiscalStartMonth = 10
+
+--NOTE: Calendar week starts from Sunday
+
+--Calculation--
+RETURN
+    ADDCOLUMNS (
+        CALENDARAUTO ( FiscalStartMonth - 1 ),
+        "MIndex", MONTH ( [Date] ),
+        "FiscalMIndex", MONTH ( EDATE ( [Date], - FiscalStartMonth + 1 ) ),
+        "CalMonth", FORMAT ( [Date], "mmm" ),
+        "CalQtr", "Q"
+            & CEILING ( MONTH ( [Date] ), FiscalStartMonth - 1 ) / ( FiscalStartMonth - 1 ),
+        "CalYear", YEAR ( [Date] ),
+        "Fiscal Week",
+        VAR FiscalFirstDay =
+            IF (
+                MONTH ( [Date] ) < FiscalStartMonth,
+                DATE ( YEAR ( [Date] ) - 1, FiscalStartMonth, 1 ),
+                DATE ( YEAR ( [Date] ), FiscalStartMonth, 1 )
+            )
+        VAR FilteredTableCount =
+            COUNTROWS (
+                FILTER (
+                    SELECTCOLUMNS ( GENERATESERIES ( FiscalFirstDay, [Date] ), "Dates", [Value] ),
+                    FORMAT ( [Dates], "ddd" ) = WeekStartsOn
+                )
+            )
+        VAR WeekNos =
+            IF (
+                FORMAT ( FiscalFirstDay, "ddd" ) <> WeekStartsOn,
+                FilteredTableCount + 1,
+                FilteredTableCount
+            )
+        RETURN
+            "Week " & WeekNos,
+        "Fiscal Qtr", "Q"
+            & CEILING ( MONTH ( EDATE ( [Date], - FiscalStartMonth + 1 ) ), 3 ) / 3,
+        "Fiscal Year",
+        VAR CY =
+            RIGHT ( YEAR ( [Date] ), 2 )
+        VAR NY =
+            RIGHT ( YEAR ( [Date] ) + 1, 2 )
+        VAR PY =
+            RIGHT ( YEAR ( [Date] ) - 1, 2 )
+        VAR FinYear =
+            IF ( MONTH ( [Date] ) > ( FiscalStartMonth - 1 ), CY & "-" & NY, PY & "-" & CY )
+        RETURN
+            FinYear,
+        "CalWeekNo", WEEKNUM ( [Date], 2 ),
+        "Weekend/Working", IF ( WEEKDAY ( [Date], 2 ) > 5, "Weekend", "Working" ),
+        "Day", FORMAT ( [Date], "ddd" ),
+        "CustomDate", FORMAT ( [Date], "d/mm" )
+    )
+```
+</details>
+</details>
 
 - In each step, show your Code
 
@@ -205,6 +276,57 @@ Explain the step-by-step approach taken to solve the problem.
 
 - Explain its purpose and its findings
 
+Measure Table
+```power BI
+%OnTimeProduction = 
+VAR Num_0 = COUNTROWS(FILTER('Production_WorkOrderRouting', 'Production_WorkOrderRouting'[OnTime] = 0))
+VAR Num_1 = COUNTROWS(FILTER('Production_WorkOrderRouting', 'Production_WorkOrderRouting'[OnTime] = 1))
+RETURN 
+Num_1/(Num_0+Num_1)
+```
+
+```powwer BI
+%Waste = CALCULATE(SUM( 'Production_WorkOrder'[ScrappedQty])/SUM('Production_WorkOrder'[OrderQty]))
+```
+
+```power BI
+CumulativeTotalsYTD = TOTALYTD(SUM('Production_WorkOrder'[OrderQty]), 'Calendar'[Date], "09/30")
+
+CycleTime = SUM( 'Production_WorkOrderRouting'[ActualResourceHrs] ) / SUM ( 'Production_WorkOrder'[OrderQty] )
+
+OrderQuantity = SUM('Production_WorkOrder'[OrderQty])
+
+SalesOrderQty = SUM(Sales_SalesOrderDetail[OrderQty])
+
+StandardCostInventory = SUM('Production_WorkOrder'[StockedQty])*SUM('Product_Product'[StandardCost])
+
+WasteCost = SUM('Production_WorkOrder'[ScrappedQty]) * AVERAGE('Product_Product'[StandardCost])
+```
+Production_Bike Table
+```power BI
+Production_Bike = FILTER(
+SUMMARIZE( 'Production_WorkOrder', Production_ProductSubcategory[Name], " Subcategory Totals ", [OrderQuantity]),
+    NOT(ISBLANK('Production_ProductSubcategory'[Name])) && 'Production_ProductSubcategory'[Name] <> ""
+)
+```
+
+```power BI
+%Pareto = DIVIDE([CumulativeSum],[TotalSum])
+
+Cumulative = CALCULATE( SUM('Production_Bike'[ Subcategory Totals ]), FILTER( ALL('Production_Bike'[Rank]), 'Production_Bike'[Rank] <= MAX('Production_Bike'[Rank])))
+
+CumulativeSum = 
+CALCULATE( SUM( 'Production_Bike'[ Subcategory Totals ]), FILTER( ALLSELECTED( 'Production_Bike'), 'Production_Bike'[Rank] <= MAX( 'Production_Bike'[Rank])))
+
+Production_Bike = FILTER(
+SUMMARIZE( 'Production_WorkOrder', Production_ProductSubcategory[Name], " Subcategory Totals ", [OrderQuantity]),
+    NOT(ISBLANK('Production_ProductSubcategory'[Name])) && 'Production_ProductSubcategory'[Name] <> ""
+)
+
+Rank = RANKX( ALL('Production_Bike'), 'Production_Bike'[ Subcategory Totals ])
+
+TotalSum = CALCULATE( SUM( 'Production_Bike'[ Subcategory Totals ]), ALLSELECTED( 'Production_Bike'))
+```
 
 4️⃣ Power BI Visualization  (applicable for PBI Projects)
 

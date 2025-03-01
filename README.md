@@ -77,7 +77,8 @@ Efficient Reporting: Provides an efficient way to communicate key sales metrics 
 <details>
   <summary>📌 Click để mở nội dung</summary>
 
-  Table 1: Production_WorkOrder
+  <details>
+  <summary>Table 1: Production_WorkOrder</summary>Table 1: Production_WorkOrder
 
 | Column Name | Data Type | Description |  
 |-------------|----------|-------------|  
@@ -91,6 +92,8 @@ Efficient Reporting: Provides an efficient way to communicate key sales metrics 
 | DueDate | datetime | Work order due date. |
 | ScrapReasonID | smallint | Reason for inspection failure. |
 | ModifiedDate | datetime | Date and time the record was last updated. |
+
+  </details>
 
 Table 2: Product_Product  
 

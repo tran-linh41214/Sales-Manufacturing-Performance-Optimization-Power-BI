@@ -95,7 +95,8 @@ Efficient Reporting: Provides an efficient way to communicate key sales metrics 
 
   </details>
 
-Table 2: Product_Product  
+  <details>
+  <summary>Table 2: Product_Product</summary>Table 1: Production_WorkOrder  
 
 | Column Name    | Data Type | Description |  
 |---------------|----------|-------------|  
@@ -125,6 +126,7 @@ Table 2: Product_Product
 | rowguid | uniqueidentifier | ROWGUIDCOL number uniquely identifying the record. Used to support a merge replication sample. |
 | ModifiedDate | datetime | Date and time the record was last updated. |
 
+</details>
 </details> 
 
 

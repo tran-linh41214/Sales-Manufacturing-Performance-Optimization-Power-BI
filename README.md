@@ -20,36 +20,15 @@ Tools Used: Power BI
 Adventure Works, a leading player in the manufacturing and sales industry, requires in-depth analysis of its sales data to make informed business decisions. This dashboard collates extensive sales data into an easily interpretable format, helping stakeholders understand key sales dynamics and trends.  
 
 ### 👤 Stake Holder  
-✔️ Production Director
-✔️ Project Manager 
-✔️ Planning Department  
+✔️ Production Director  
+✔️ Project Manager   
+✔️ Planning Department    
 ✔️ Warehouse and Quality Management Department
 
 
 ###  ❓Business Questions:  
 ✔️ Analyze production reports based on the fiscal year.
 ✔️ Manage quantity, quality, time, workforce, and production costs for each product category. 
-
-### 🎯Project Outcome:  
-Summarize key findings and insights/ trends/ themes in a concise, bullet-point 
-format.  
-Features
-Time Series Analysis: Visual representation of sales trends over the three-year period.
-Product Performance Tracking: Insights into top-performing and underperforming products.
-Customer Demographics Analysis: Breakdown of sales data by customer demographics such as age, location, and purchasing habits.
-Sales Territory Mapping: Geographic visualization of sales distribution and territory performance.
-Revenue and Profit Analysis: Detailed analysis of revenue streams and profitability.
-Interactive Filter: Customizable filters for in-depth analysis of specific time frames, products, regions, and customer segments.
-Benefits
-Strategic Decision Making: Empowers management with data-driven insights for strategic planning.
-Performance Tracking: Enables sales teams to monitor and improve their performance.
-Market Understanding: Helps in understanding market trends and customer preferences.
-Efficient Reporting: Provides an efficient way to communicate key sales metrics to stakeholders.
- _Example:_
-
-✔️ Sales Trends: The top X% of products generate Y% of revenue.  
-✔️ Inventory Optimization: Certain products are frequently out-of-stock, causing revenue loss.  
-✔️ Customer Behavior: Returning customers spend Z% more per transaction than new customers.  
 
 ---
 
@@ -71,7 +50,6 @@ Efficient Reporting: Provides an efficient way to communicate key sales metrics 
 |                                         | Production_ScrapReason                 |
 |                                         | Production_BillofMaterials             |
 
-![image](https://github.com/user-attachments/assets/df8c4bf7-e720-4721-be27-abc3d43e3702)
 
 #### 2️⃣ Table Schema & Data Snapshot  
 <details>
@@ -130,28 +108,10 @@ Efficient Reporting: Provides an efficient way to communicate key sales metrics 
 </details> 
 
 
+#### 3️⃣ Data Relationships:   
 
-Table 2: Sales Transactions  
+![image](https://github.com/user-attachments/assets/df8c4bf7-e720-4721-be27-abc3d43e3702)
 
-👉🏻 Insert a screenshot of table schema 
-
-
- _Example:_
-
-| Column Name    | Data Type | Description |  
-|---------------|----------|-------------|  
-| Transaction_ID | INT      | Unique identifier for each sale |  
-| Product_ID     | INT      | Foreign key linking to Products table |  
-| Quantity       | INT      | Number of items sold |  
-| Sale_Date      | DATE     | Date of transaction |  
-
-
-📌If the table is too big, only capture a part of it that contains key metrics you used in the projects or put the table in toggle
-
-#### 3️⃣ Data Relationships:  
-Describe the connections between tables—e.g., one-to-many, many-to-many.  
-
-👉🏻 Include a screenshot of Data Modeling to visualize relationships.  
 
 ---
 
@@ -195,12 +155,8 @@ Explain the step-by-step approach taken to solve the problem.
 
 ## ⚒️ Main Process
 
-1️⃣ Data Cleaning & Preprocessing  
-2️⃣ Exploratory Data Analysis (EDA)  
+Giả định Năm tài chính kết thúc ngày 30/9
 
-3️⃣ SQL/ Python Analysis 
-
-Năm tài chính kết thúc ngày 30/9
 <details>
   <summary>📌Tính năm tài chính</summary>
  
@@ -328,42 +284,96 @@ Rank = RANKX( ALL('Production_Bike'), 'Production_Bike'[ Subcategory Totals ])
 TotalSum = CALCULATE( SUM( 'Production_Bike'[ Subcategory Totals ]), ALLSELECTED( 'Production_Bike'))
 ```
 
-4️⃣ Power BI Visualization  (applicable for PBI Projects)
-
 ---
 
 ## 📊 Key Insights & Visualizations  
 
 ### 🔍 Dashboard Preview  
 
-#### 1️⃣ Dashboard 1 Preview  
-👉🏻 Insert Power BI dashboard screenshots here  
+#### 1️⃣ Dashboard 1: Overview
+
+![image](https://github.com/user-attachments/assets/a0c3dcc9-9b3c-4948-a434-a36c67d5b475)
+  
 
 📌 Analysis 1:  
-- Observation: _Describe trends, key metrics, and patterns._  
-- Recommendation: _Suggest actions based on insights._  
+Quá trình sản xuất của công ty giai đoạn 2010 - 2014
+- Fiscal YTD - Waste: Tổng số sản phẩm bị lỗi trong năm tài chính: 11K
+- Fiscal YTD - Production: Số sản phẩm đã sản xuất: 4508K
+=> Tỷ lệ sản phẩm lỗi: 0.2%
+- Average Production Lead Time: Khoảng thời gian trung bình từ khi bắt đầu đến khi hoàn thành việc sản xuất: 297.34
+- Tỷ lệ sản xuất đúng hạn: 41.6%
+- Fiscal YTD - Production Hours: Tổng số giờ lao động của công nhân/ Số giờ hoạt động của máy móc trong sản xuất của năm tài chính: 229K
+- Cumulative Monthly Totals YTD: tổng số sản phẩm được sản xuất tích lũy từ đầu năm tài chính đến một thời điểm cụ thể trong năm => giúp so sánh với KPI năm để đánh giá hiệu quả, tiến độ và có điều chỉnh kịp thời cho giai đoạn tiếp theo
+  Có thể thấy trên biểu đồ số lượng này tăng qua từng năm nhưng tốc độ tăng đang giảm dần
+- Waste Cost: Chi phí bị lãng phí: biến động bất thường qua các năm, cao nhất vào tháng 9 năm 2013, dấu hiệu tích cực là sang năm 2014 đã giảm nhiều, nhưng tháng 4 năm 2014 lại tăng khá cao
+- Donut chart: phân bổ chi phí trên các công đoạn lắp ráp => xem tốn nhiều chi phí ở công đoạn nào để có các biện pháp cải thiện phù hợp => phần chiếm nhiều nhất subassembly, final assembly, frame forming
 
-#### 2️⃣ Dashboard 2 Preview  
-👉🏻 Insert Power BI dashboard screenshots here
+#### 2️⃣ Category Analysis  
+
+![image](https://github.com/user-attachments/assets/f2b184fb-2994-4f4a-a6c0-8d5b7971a707)
 
 📌 Analysis 2:   
-- Observation: _Describe trends, key metrics, and patterns._  
-- Recommendation: _Suggest actions based on insights._  
 
-#### 3️⃣ Dashboard 3 Preview  
-👉🏻 Insert Power BI dashboard screenshots here  
+- Scatter chart: số lượng sản phẩm đã sản xuất và số lượng sản phẩm đã được bán
+  => Derailleurs, wheels: số lượng bán ra thấp nhưng số lượng sản xuất lại cao nhất
 
+![image](https://github.com/user-attachments/assets/d998e7e3-18f0-4b60-978e-933fbb30141d)
+
+ 
+- Wheels: waste percent - tỷ lệ sản phẩm bị lỗi là 0.3% > mức trung bình (0.2%), Standard cost inventory - chi phí lưu kho cao: 254.52M $, Actual Resource Hours đứng thứ 2, chiếm khoảng 1/3 chi phí lắp ráp (actual cost by location - subassembly)
+  => cần tìm ra lỗi trong quá trình sản xuất để giảm waste percent, giảm số lượng sản xuất để phù hợp với số lượng bán ra
+- Derailleurs: waste percent = average
+
+![image](https://github.com/user-attachments/assets/7123a6cc-527c-4277-92e3-2ac7885611b8)
+ 
+- Linh kiện tốn nhiều chi phí, nhân công, máy móc nhất: Handlebars. Trong đó công đoạn frame forming và frame welding của bộ phận này là tốn kém nhất
+  
+
+#### 3️⃣ Bike Production Analysis  
+![image](https://github.com/user-attachments/assets/a43e5661-d6c6-4738-86c8-21484d4ddcce)
+  
 📌 Analysis 3:  
-- Observation: _Describe trends, key metrics, and patterns._  
-- Recommendation: _Suggest actions based on insights._  
 
+- Biểu đồ line - column chart: columns: số lượng sản phẩm được sản xuất theo từng subcategory, xếp theo thứ tự giảm dần; line: phần trăm cộng dồn tỷ trọng của từng thành phần
+Chart 1: các thành phần sản xuất xe đạp
+Chart 2: các loại xe đạp/ các sản phẩm xe đạp hoàn thiện
+- Table matrix: scrap reason and waste cost
+*(Theo Dashboard 2, cần tìm nguyên nhân gây lỗi khi sản xuất wheels)*
+
+![image](https://github.com/user-attachments/assets/e43826d6-6fdb-4c40-814d-ded3f781d55c)
+
+
+Wheels - On time production percent cao => kiểm tra lại xem nhà máy có tập trung vào việc sản xuất đúng hạn và bỏ qua chất lượng sản phẩm không
+Lý do chiếm tỷ lệ nhiều nhất: Sai màu sắc, họa tiết, kích thước mũi khoan quá lớn
+
+![image](https://github.com/user-attachments/assets/596e81c4-9192-4a69-b0b3-35b2135a98da)
+
+- Drailleurs: % ontime production cao nhất, chi phí không quá nhiều => chỉ cần cân đối lại lượng sản xuất và sales
+
+  ![image](https://github.com/user-attachments/assets/c635f296-20cc-4522-bd3e-cede88af3d99)
+
+- Road Bikes: sales cao nhất => mặt hàng chủ chốt => tiếp tục phát triển và khắc phục các lỗi còn tồn tại
+
+![image](https://github.com/user-attachments/assets/5680fa9d-fc8e-4b4d-bf2b-35acdfceebd2)
+
+
+- Touring bikes: sales khá thấp, lỗi lớn nhất là sai màu sắc => khảo sát lại tệp khách hàng mua Touring bike xem màu sắc có là yếu tố then chốt trong quyết định mua hàng của họ hay không => nếu đúng, khắc phục để tăng sales
 ---
 
 ## 🔎 Final Conclusion & Recommendations  
 
-👉🏻 Based on the insights and findings above, we would recommend the [stakeholder team] to consider the following:  
+### 🔍 **Key Insights:**  
 
-📌 Key Takeaways:  
-✔️ Recommendation 1  
-✔️ Recommendation 2  
-✔️ Recommendation 3
+- **Production Efficiency Issues**: Low on-time production rate (41.6%) and long lead time (297.34 hours) indicate inefficiencies in scheduling and execution.  
+- **Waste & Cost Concerns**: Fluctuating waste costs with high peaks suggest inconsistent quality control; the most resource-heavy processes are *subassembly, final assembly, and frame forming*.  
+- **Overproduction Risks**: *Wheels & Derailleurs* have high production but low sales, leading to excess inventory and high storage costs.  
+- **Quality Control Challenges**: Wheels have a defect rate above average (0.3%), mainly due to incorrect colors, patterns, and oversized drill holes.  
+- **Product-Specific Findings**: *Road Bikes* are the best-selling category, while *Touring Bikes* have low sales, with color mismatch as a key defect.  
+
+### 📌 **Actionable Recommendations:**  
+
+✔️ **Improve Production Scheduling**: Optimize planning to increase on-time production and reduce lead time.   
+✔️ **Enhance Quality Control**: Focus on key defect areas (*color accuracy, pattern consistency, precise drilling*) to lower waste and rework.  
+✔️ **Adjust Production to Demand**: Align *Wheels & Derailleurs* output with actual sales to reduce overstock and storage costs.
+✔️ **Cost Optimization**: Reassess *subassembly, final assembly, and frame forming* processes to reduce excessive resource consumption.
+✔️ **Customer-Centric Adjustments**: Conduct surveys on *Touring Bike* color preferences before modifying production to boost sales.

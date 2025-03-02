@@ -374,6 +374,6 @@ Lý do chiếm tỷ lệ nhiều nhất: Sai màu sắc, họa tiết, kích th�
 
 ✔️ **Improve Production Scheduling**: Optimize planning to increase on-time production and reduce lead time.   
 ✔️ **Enhance Quality Control**: Focus on key defect areas (*color accuracy, pattern consistency, precise drilling*) to lower waste and rework.  
-✔️ **Adjust Production to Demand**: Align *Wheels & Derailleurs* output with actual sales to reduce overstock and storage costs.
-✔️ **Cost Optimization**: Reassess *subassembly, final assembly, and frame forming* processes to reduce excessive resource consumption.
+✔️ **Adjust Production to Demand**: Align *Wheels & Derailleurs* output with actual sales to reduce overstock and storage costs.  
+✔️ **Cost Optimization**: Reassess *subassembly, final assembly, and frame forming* processes to reduce excessive resource consumption.  
 ✔️ **Customer-Centric Adjustments**: Conduct surveys on *Touring Bike* color preferences before modifying production to boost sales.

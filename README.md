@@ -27,7 +27,7 @@ Adventure Works, a leading player in the manufacturing and sales industry, requi
 
 
 ###  ❓Business Questions:  
-✔️ Analyze production reports based on the fiscal year.
+✔️ Analyze production reports based on the fiscal year.  
 ✔️ Manage quantity, quality, time, workforce, and production costs for each product category. 
 
 ---

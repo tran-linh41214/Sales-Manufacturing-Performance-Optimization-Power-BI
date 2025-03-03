@@ -17,7 +17,7 @@ Tools Used: Power BI
 
 ### Objective:
 ### 📖 Overview 
-Adventure Works, a leading player in the manufacturing and sales industry, requires in-depth analysis of its sales data to make informed business decisions. This dashboard collates extensive sales data into an easily interpretable format, helping stakeholders understand key sales dynamics and trends.  
+Adventure Works, a leading player in the manufacturing and sales industry, requires in-depth analysis of its manufacturing data to make informed business decisions. This dashboard collates extensive manufacture and sales data into an easily interpretable format, helping stakeholders understand key sales dynamics and trends.  
 
 ### 👤 Stake Holder  
 ✔️ Production Director  

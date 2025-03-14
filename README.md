@@ -27,8 +27,8 @@ Adventure Works, a leading player in the manufacturing and sales industry, requi
 
 
 ###  ❓Business Questions:  
-✔️ Analyze production reports based on the fiscal year.  
-✔️ Manage quantity, quality, time, workforce, and production costs for each product category. 
+**Problem Summary:** The dashboard helps the Production Manager efficiently monitor production progress, product quality, and inventory management in a clear and visual way.
+
 
 ---
 
@@ -60,7 +60,7 @@ Adventure Works, a leading player in the manufacturing and sales industry, requi
   <summary>📌 Click để mở nội dung</summary>
 
   <details>
-  <summary>Table 1: Production_WorkOrder</summary>Table 1: Production_WorkOrder
+  <summary>Table 1: Production_WorkOrder</summary>
 
 | Column Name | Data Type | Description |  
 |-------------|----------|-------------|  
@@ -78,7 +78,7 @@ Adventure Works, a leading player in the manufacturing and sales industry, requi
   </details>
 
   <details>
-  <summary>Table 2: Product_Product</summary>Table 1: Production_WorkOrder  
+  <summary>Table 2: Product_Product</summary>  
 
 | Column Name    | Data Type | Description |  
 |---------------|----------|-------------|  
@@ -138,10 +138,6 @@ Adventure Works, a leading player in the manufacturing and sales industry, requi
   <img src="https://github.com/user-attachments/assets/e77ade43-0070-4a08-b2a5-8f0e953d4306" alt="Description">
 </p>
 
-
-### **Key Stakeholder & Problem Summary**  
-- **Key Stakeholder:** Production Manager  
-- **Problem Summary:** The dashboard helps the Production Manager efficiently monitor production progress, product quality, and inventory management in a clear and visual way.
 
 2️⃣ Define point of view  
 

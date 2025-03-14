@@ -1,5 +1,5 @@
-# 📊 Project Title: [Adventure Works Sales]  
-Author: [Linh Tran]  
+# 📊 Project Title: Sales & Manufacturing Performance Optimization | Power BI  
+Author: Linh Tran  
 Tools Used: Power BI 
 
 ---
@@ -20,7 +20,7 @@ Tools Used: Power BI
 Adventure Works, a leading player in the manufacturing and sales industry, requires in-depth analysis of its manufacturing data to make informed business decisions. This dashboard collates extensive manufacture and sales data into an easily interpretable format, helping stakeholders understand key sales dynamics and trends.  
 
 ### 👤 Stake Holder  
-✔️ Production Director  
+✔️ Production Manager  
 ✔️ Project Manager   
 ✔️ Planning Department    
 ✔️ Warehouse and Quality Management Department
@@ -36,19 +36,23 @@ Adventure Works, a leading player in the manufacturing and sales industry, requi
 
 ### 📌 Data Source  
 - Source: Google BigQuery  
-- Format: (.csv, .sql, .xlsx, etc.)  
+- Format: .csv  
 
 ### 📊 Data Structure & Relationships  
 
 #### 1️⃣ Tables Used:  
-| **Fact table**                          | **Dim table**                          |
-|-----------------------------------------|---------------------------------------|
-| Production_WorkOrder                    | Product_Product                        |
-| Production_WorkOrderRouting             | Production_Location                    |
-|                                         | Production_ProductCategory             |
-|                                         | Production_ProductSubcategory          |
-|                                         | Production_ScrapReason                 |
-|                                         | Production_BillofMaterials             |
+📅 **Fact table**                          
+
+-  Production_WorkOrder
+-  Production_WorkOrderRouting
+  
+📅 **Dim table**                          
+- Product_Product  
+- Production_Location  
+- Production_ProductCategory  
+- Production_ProductSubcategory
+- Production_ScrapReason
+- Production_BillofMaterials  
 
 
 #### 2️⃣ Table Schema & Data Snapshot  
@@ -110,24 +114,30 @@ Adventure Works, a leading player in the manufacturing and sales industry, requi
 
 #### 3️⃣ Data Relationships:   
 
-![image](https://github.com/user-attachments/assets/df8c4bf7-e720-4721-be27-abc3d43e3702)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/df8c4bf7-e720-4721-be27-abc3d43e3702" alt="Description">
+</p>
 
 
 ---
 
 ## 🧠 Design Thinking Process  
 
-Explain the step-by-step approach taken to solve the problem.  
-
-👉🏻 Insert a screenshot of the Design Thinking steps (Screenshot your Excel design thinking tables for better presentation).  
 
 1️⃣ Empathize 
 
-![image](https://github.com/user-attachments/assets/5dc65da6-2bc2-4464-8170-c6f6cce9ffb4)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5dc65da6-2bc2-4464-8170-c6f6cce9ffb4" alt="Description">
+</p>
 
-![image](https://github.com/user-attachments/assets/11f02aa1-5e7d-4426-a1b2-bf3e7009877b)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/11f02aa1-5e7d-4426-a1b2-bf3e7009877b" alt="Description">
+</p>
 
-![image](https://github.com/user-attachments/assets/e77ade43-0070-4a08-b2a5-8f0e953d4306)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e77ade43-0070-4a08-b2a5-8f0e953d4306" alt="Description">
+</p>
+
 
 ### **Key Stakeholder & Problem Summary**  
 - **Key Stakeholder:** Production Manager  
@@ -135,18 +145,31 @@ Explain the step-by-step approach taken to solve the problem.
 
 2️⃣ Define point of view  
 
-![image](https://github.com/user-attachments/assets/38cd7502-6fb3-457c-afbb-7ac3780512d0)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/38cd7502-6fb3-457c-afbb-7ac3780512d0" alt="Description">
+</p>
 
-![image](https://github.com/user-attachments/assets/16fbfd75-603c-418a-b0a0-651f10124336)
 
-![image](https://github.com/user-attachments/assets/81b32527-88f1-4a99-91cf-fdc76cd7ccda)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/16fbfd75-603c-418a-b0a0-651f10124336" alt="Description">
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/81b32527-88f1-4a99-91cf-fdc76cd7ccda" alt="Description">
+</p>
 
 
 3️⃣ Ideate  
 
-![image](https://github.com/user-attachments/assets/33e57df4-b86e-472d-a106-2dc4f2bd8ff2)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/33e57df4-b86e-472d-a106-2dc4f2bd8ff2" alt="Description">
+</p>
 
-![image](https://github.com/user-attachments/assets/aca18458-bd2b-44c7-a171-564dc88c35cd)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/aca18458-bd2b-44c7-a171-564dc88c35cd" alt="Description">
+</p>
+
 
 
 4️⃣ Prototype and review  

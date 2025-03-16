@@ -1,6 +1,7 @@
 # 📊 Project Title: Sales & Manufacturing Performance Optimization | Power BI  
 
-![The_ADVENTURE (1)](https://github.com/user-attachments/assets/ad69027d-923a-4487-8326-527443b7d0db)
+
+![The_ADVENTURE_WORKS](https://github.com/user-attachments/assets/f1f15a0d-4d9b-4923-ad8f-311d87cd762d)
 
 
 Author: Linh Tran  

@@ -183,8 +183,8 @@ Adventure Works, a leading player in the manufacturing and sales industry, requi
 ### 🔍 Dashboard Preview  
 
 #### 1️⃣ Dashboard 1: Manufacturing Overview  
-
-![image](https://github.com/user-attachments/assets/10394fee-3130-44cd-b626-c9fb9ad066c9)  
+ 
+![image](https://github.com/user-attachments/assets/b1d07a55-9c3f-4686-86d1-5550b18d5787)  
   
 
 📌 Analysis 1: **Production Overview:**
@@ -197,8 +197,9 @@ Adventure Works, a leading player in the manufacturing and sales industry, requi
 
 📌 Analysis 2:  **Cumulative Production Trends:**  
 <p align="center">
-<img src="https://github.com/user-attachments/assets/18431f3e-f170-47e4-99dd-183866f7c913" alt="Description">
-</p>
+<img src="https://github.com/user-attachments/assets/5fd0435e-5edd-4299-a5fc-a1deba5d5082" alt="Description">
+</p>  
+
 
 - There is a **steady increase in production across fiscal years**, indicating business growth.  
 - Seasonal trends show fluctuations in demand, which could be optimized for better inventory and resource planning.
@@ -206,8 +207,8 @@ Adventure Works, a leading player in the manufacturing and sales industry, requi
 📌 Analysis 3: **Cost Distribution**  
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/326aa5aa-b348-47d4-a6b4-20ccc30812b0" alt="Description">
-</p>
+  <img src="https://github.com/user-attachments/assets/0a35f90b-1314-4384-af00-9323cbc22a1e" alt="Description">
+</p>  
 
 - The highest actual cost is in subassembly (31.72%), followed by final assembly (26.07%) and frame welding (25.39%).  
 ➡️ Optimizing these stages could lead to significant cost savings  
@@ -223,16 +224,15 @@ Adventure Works, a leading player in the manufacturing and sales industry, requi
 
 #### 2️⃣ PRODUCTION COST ANALYSIS  
 
-![image](https://github.com/user-attachments/assets/c5afcc26-6bb7-4e0a-a13a-516332c90209)
+![image](https://github.com/user-attachments/assets/d18c657d-5e82-444f-9dd2-a148d6fb6c35)
 
 *In dashboard 1: Derailleurs, wheels: Low sales volume but highest production quantity*   
-📌 Analysis 1:   **Wheels:**
-
+📌 Analysis 1:   **Wheels:**  
 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/5dbdea73-fb18-41b7-9b92-47d760b2c287" alt="Description">
-</p>
+  <img src="https://github.com/user-attachments/assets/d985211f-39c2-43b2-b709-95d4ae81c531" alt="Description">
+</p>  
 
 - Waste percent is 0.3%, which is higher than the average (0.2%).  
 - Standard cost inventory is high at $254.52M.  
@@ -242,19 +242,20 @@ Adventure Works, a leading player in the manufacturing and sales industry, requi
 ➡️ Identify defects in the production process to reduce the waste percentage.  
 ➡️ Optimize production volume to align with sales demand, preventing overproduction and high inventory costs.
 
-📌 Analysis 2: **Derailleurs**
+📌 Analysis 2: **Derailleurs**  
 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/5d808b4f-e6d9-4997-b724-d407076503af" alt="Description">
-</p>
+  <img src="(https://github.com/user-attachments/assets/8ff6e7bf-b38b-4f8c-985c-a26cc14c1339" alt="Description">
+</p>  
 
 - Waste percent = average  
 - Top waste issues: Handling damage ($3.5K), stress test failures ($2.4K), temperature issues ($2.8K) → Improve quality control & material handling.  
 - Moderate inventory cost ($17.15M), but waste reduction needed → Minimize defects & enhance efficiency.  
 
 📌 Analysis 3: **Handlebars** - The components that consume the most cost and resource hours  
-![image](https://github.com/user-attachments/assets/4100bef6-5d38-4a00-845c-7d0fe2761cf7)
+![image](https://github.com/user-attachments/assets/ff8b1ba6-9c56-4aa0-a16c-c1790ef4c6b2)  
+
 
 - Waste & Defects: Key issues include metal gouging and thermoform errors.  
 - Efficiency Concerns: Low on-time production suggests scheduling or process inefficiencies.
